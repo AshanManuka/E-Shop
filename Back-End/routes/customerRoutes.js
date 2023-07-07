@@ -19,8 +19,8 @@ router.put('putCustomer/update:id',(req,res)=>{
 });
 
 
-//delete organizer
- router.delete('organizer/delete:id',(req,res)=>{
+//delete
+ router.delete('deleteCustomer/delete:id',(req,res)=>{
     // code
  });
 
