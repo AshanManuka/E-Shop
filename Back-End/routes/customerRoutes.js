@@ -21,8 +21,41 @@ router.get("/getCustomer", async (req, res) => {
 });
 
  //update
-router.put('putCustomer/update:id',(req,res)=>{
-    // code
+router.put('/update:id',(req,res)=>{
+    
+    
+  const customerId = req.params.id;
+  const updateData = req.body;
+
+  customer.findOneAndUpdate({ _id: customerId }, updateData, { new: true })
+    .then(updatedCustomer => {
+      if (!updatedCustomer) {
+        return res.status(404).json({ error: 'Customer not found' });
+      }
+
+      return res.status(200).json({
+        success: 'Customer updated successfully',
+        customer: updatedCustomer
+      });
+    })
+    .catch(error => {
+      return res.status(400).json({ error: error.message });
+    });
+    
+    
+    // customer.findByIdAndUpdate(req.params.id, {
+    //     $set: req.body
+    // })
+    //     .then(() => {
+    //         return res.status(200).json({
+    //             success: "updated successfully"
+    //         });
+    //     })
+    //     .catch(err => {
+    //         return res.status(400).json({ error: err });
+    //     });
+    
+   
 });
 
 
