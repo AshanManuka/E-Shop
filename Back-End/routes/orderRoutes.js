@@ -5,10 +5,12 @@ const router = express.Router();
 
 //save function
 router.post('/saveOrder',async(req,res)=>{
-    // code    
+    console.log("Request Order : ",req.body);
+    const data=await order.create(req.body);
+    res.send("Order Saved Succesfully!!");   
 })
 
-//get organizers
+//get 
 router.get("/getOrder", async (req, res) => {
     // code
 });

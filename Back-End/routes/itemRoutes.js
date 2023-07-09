@@ -5,7 +5,9 @@ const router = express.Router();
 
 //save function
 router.post('/saveItem',async(req,res)=>{
-    // code    
+    console.log("Request Item : ",req.body);
+    const data=await item.create(req.body);
+    res.send("Item Saved Succesfully!!");   
 })
 
 //get organizers
