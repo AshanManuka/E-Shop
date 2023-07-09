@@ -15,15 +15,15 @@ const orderSchema = new mongoose.Schema({
         required : true
     },
     qty: {
-        type : int,
+        type : Number,
         required : true
     },
     discount : {
-        type : double,
+        type : Number,
         required : true
     },
     amount : {
-        type : double,
+        type : Number,
         required : true
     }
 });

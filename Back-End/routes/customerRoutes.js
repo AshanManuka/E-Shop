@@ -5,8 +5,16 @@ const router = express.Router();
 
 //save function
 router.post('/saveCustomer',async(req,res)=>{
-    // code    
-})
+    
+    let newCustomer = new customer(req.body);
+    console.log(newCustomer);
+    newCustomer.save((err)=>{
+        if(err){
+            return res.status(400).json({ error : err});
+        }
+        return res.status(200).json({ success : "Customer was Saved !"});
+    });
+});
 
 //get organizers
 router.get("/getCustomer", async (req, res) => {

@@ -11,6 +11,9 @@ router.post('/saveItem',async(req,res)=>{
 //get organizers
 router.get("/getItem", async (req, res) => {
     // code
+    res.send("correct method calling");
+    console.log("called get method");
+    
 });
 
  //update

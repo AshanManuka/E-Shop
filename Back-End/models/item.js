@@ -11,11 +11,11 @@ const itemSchema = new mongoose.Schema({
         required : true
     },
     price: {
-        type : double,
+        type : Number,
         required : true
     },
     qtyOnHand : {
-        type : BigInt,
+        type : Number,
         required : true
     }
 });
