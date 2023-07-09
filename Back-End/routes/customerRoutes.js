@@ -10,9 +10,14 @@ router.post('/saveCustomer',async(req,res)=>{
     res.send("Customer Saved Succesfully!!");
 });
 
-//get organizers
+//get 
 router.get("/getCustomer", async (req, res) => {
-    // code
+    try {
+        const customerList = await customer.find();
+        res.send(customerList);
+    } catch (error) {
+        return error
+    }
 });
 
  //update

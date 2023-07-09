@@ -12,7 +12,12 @@ router.post('/saveOrder',async(req,res)=>{
 
 //get 
 router.get("/getOrder", async (req, res) => {
-    // code
+    try {
+        const orderList = await order.find();
+        res.send(orderList);
+    } catch (error) {
+        return error
+    }
 });
 
  //update

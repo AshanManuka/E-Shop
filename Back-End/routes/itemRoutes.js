@@ -10,11 +10,14 @@ router.post('/saveItem',async(req,res)=>{
     res.send("Item Saved Succesfully!!");   
 })
 
-//get organizers
+//get 
 router.get("/getItem", async (req, res) => {
-    // code
-    res.send("correct method calling");
-    console.log("called get method");
+    try {
+        const itemList = await item.find();
+        res.send(itemList);
+    } catch (error) {
+        return error
+    }
     
 });
 
