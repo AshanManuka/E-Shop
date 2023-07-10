@@ -22,7 +22,21 @@ router.get("/getOrder", async (req, res) => {
 
  //update
 router.put('putOrder/update:id',(req,res)=>{
-    // code
+    const obId = req.params.id;
+    const newObId = obId.slice(1,obId.length);
+    
+      customer.findByIdAndUpdate(newObId, { 
+        $set: req.body
+      })
+          .then(() => {
+              return res.status(200).json({
+                  success: "updated successfully"
+              });
+          })
+          .catch(err => {
+              return res.status(400).json({ error: err });
+          });
+   
 });
 
 

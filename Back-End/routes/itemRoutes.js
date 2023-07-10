@@ -23,7 +23,21 @@ router.get("/getItem", async (req, res) => {
 
  //update
 router.put('putItem/update:id',(req,res)=>{
-    // code
+    const obId = req.params.id;
+    const newObId = obId.slice(1,obId.length);
+    
+      item.findByIdAndUpdate(newObId, { 
+        $set: req.body
+      })
+          .then(() => {
+              return res.status(200).json({
+                  success: "updated successfully"
+              });
+          })
+          .catch(err => {
+              return res.status(400).json({ error: err });
+          });
+   
 });
 
 
