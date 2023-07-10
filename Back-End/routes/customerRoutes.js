@@ -26,7 +26,7 @@ router.put('/updateCus:customerId',(req,res)=>{
 
   const obId = req.params.customerId;
   const newObId = obId.slice(1,obId.length);
-  
+
     customer.findByIdAndUpdate(newObId, { 
       $set: req.body
     })
@@ -45,8 +45,21 @@ router.put('/updateCus:customerId',(req,res)=>{
 
 
 //delete
- router.delete('deleteCustomer/delete:id',(req,res)=>{
-    // code
+ router.delete('/delete:id',(req,res)=>{
+
+  const obId = req.params.id;
+  const newObId = obId.slice(1,obId.length);
+  console.log(newObId);
+    
+  customer.findByIdAndRemove(newObId) .then(() => {
+    return res.status(200).json({
+        success: "Delete successfully"
+    });
+})
+.catch(err => {
+    return res.status(400).json({ error: err });
+});
+    
  });
 
  module.exports = router;
