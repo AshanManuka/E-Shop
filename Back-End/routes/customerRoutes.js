@@ -14,6 +14,7 @@ router.post('/saveCustomer',async(req,res)=>{
 router.get("/getCustomer", async (req, res) => {
     try {
         const customerList = await customer.find();
+        console.log("Sent Customer Data list");
         res.send(customerList);
     } catch (error) {
         return error
@@ -21,39 +22,23 @@ router.get("/getCustomer", async (req, res) => {
 });
 
  //update
-router.put('/update:id',(req,res)=>{
-    
-    
-  const customerId = req.params.id;
-  const updateData = req.body;
+router.put('/updateCus:customerId',(req,res)=>{
 
-  customer.findOneAndUpdate({ _id: customerId }, updateData, { new: true })
-    .then(updatedCustomer => {
-      if (!updatedCustomer) {
-        return res.status(404).json({ error: 'Customer not found' });
-      }
-
-      return res.status(200).json({
-        success: 'Customer updated successfully',
-        customer: updatedCustomer
-      });
+  const obId = req.params.customerId;
+  const newObId = obId.slice(1,obId.length);
+  
+    customer.findByIdAndUpdate(newObId, { 
+      $set: req.body
     })
-    .catch(error => {
-      return res.status(400).json({ error: error.message });
-    });
-    
-    
-    // customer.findByIdAndUpdate(req.params.id, {
-    //     $set: req.body
-    // })
-    //     .then(() => {
-    //         return res.status(200).json({
-    //             success: "updated successfully"
-    //         });
-    //     })
-    //     .catch(err => {
-    //         return res.status(400).json({ error: err });
-    //     });
+        .then(() => {
+            return res.status(200).json({
+                success: "updated successfully"
+            });
+        })
+        .catch(err => {
+            return res.status(400).json({ error: err });
+        });
+ 
     
    
 });
