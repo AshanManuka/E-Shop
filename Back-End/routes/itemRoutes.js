@@ -42,8 +42,19 @@ router.put('putItem/update:id',(req,res)=>{
 
 
 //delete
- router.delete('deleteItem/delete:id',(req,res)=>{
-    // code
+ router.delete('/delete:id',(req,res)=>{
+  const obId = req.params.id;
+  const newObId = obId.slice(1,obId.length);
+  console.log(newObId);
+    
+  item.findByIdAndRemove(newObId) .then(() => {
+    return res.status(200).json({
+        success: "Delete successfully"
+    });
+})
+.catch(err => {
+    return res.status(400).json({ error: err });
+});
  });
 
  module.exports = router;
