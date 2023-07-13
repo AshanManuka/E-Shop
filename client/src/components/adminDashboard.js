@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class adminDashboard extends Component {
+export default class AdminDashboard extends Component {
   render() {
     return (
       <div>adminDashboard Opened </div>
