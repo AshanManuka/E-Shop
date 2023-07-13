@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-export default class userDashboard extends Component {
+export default class UserDashboard extends Component {
   constructor(props){
     super(props);
 
