@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+
 
 export default class Home extends Component {
   
@@ -20,10 +20,16 @@ export default class Home extends Component {
 
         </div>
 
+        <br/><br/><br/>
+      
+      
+
+        <br/><br/><br/>
 
 
-        <button className='btn btn-success'><a href='/userPage' style={{textDecoration: 'none', color: 'white'}}>As Admin</a></button>
-        
+        <button className='btn btn-success'><a href='/userPage' style={{textDecoration: 'none', color: 'white'}}>Customer Data</a></button>
+        <br/><br/>
+        <button className='btn btn-success'><a href='/itemPage' style={{textDecoration: 'none', color: 'white'}}>Item Data</a></button>
         </div>
 
       
