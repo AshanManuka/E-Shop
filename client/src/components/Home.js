@@ -22,6 +22,11 @@ export default class Home extends Component {
         </div>
 
 
+        <div className='sliderDiv'>
+        <img src={require('./../assets/wapeOne.jpg')} alt="Example" />
+        </div>
+
+
 
 
  {/* <button className='btn btn-success'><a href='/userPage' style={{textDecoration: 'none', color: 'white'}}>Customer Data</a></button>
