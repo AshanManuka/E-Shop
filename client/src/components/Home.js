@@ -23,10 +23,12 @@ export default class Home extends Component {
 
 
         <div className='sliderDiv'>
+          <h3 style={{fontFamily:'serif', color: 'GrayText'}}><b>Discount Today</b></h3>
         <img src={require('./../assets/wapeOne.jpg')} alt="Example" />
         </div>
 
 
+        <button type="button" id='goBtn'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>Let's Shopping</h3></a></button>
 
 
  {/* <button className='btn btn-success'><a href='/userPage' style={{textDecoration: 'none', color: 'white'}}>Customer Data</a></button>
