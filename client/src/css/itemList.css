@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(189, 236, 236);
+}
+
+.itemDiv{
+    background-color: rgb(167, 209, 209);
+    height: 200px;
+    border-radius: 10px;
+    /* width: 20%; */
+    
+}
+
+.desDiv{
+    position: relative;
+    left: 20%;
+    margin-top: -17%;
+}
+
+
+
+.imageDiv{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(112, 109, 109);
+    border-radius: 10px;
+}
+
+
+h5{
+    display: inline;
+}
+h6{
+    display: inline;
+}
+
+
+#addToCart,#buyBtn{
+    width: 250px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+#addToCart{
+    position: absolute;
+    left: 50%;
+    margin-top: -160px;
+    background-color: rgb(5, 80, 129);
+}
+
+#buyBtn{
+    position: absolute;
+    left: 70%;
+    margin-top: -208px;
+    background-color: rgb(170, 154, 7);
+}
