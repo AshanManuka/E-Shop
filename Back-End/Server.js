@@ -17,12 +17,14 @@ app.use(bodyParser.json());
 const customer = require('./routes/customerRoutes');
 const item = require('./routes/itemRoutes');
 const order = require('./routes/orderRoutes');
+const cart = require('./routes/cartRoutes');
 
 
 // routes middlewares
 app.use('/customer',customer)
 app.use('/item', item)
 app.use('/order', order)
+app.use('/cart', cart)
 
 
 const PORT = 8000;

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './../css/itemList.css';
 import NavBar from './NavBar';
+ import OrderForm from './OrderForm';
 import { Route, Routes } from 'react-router-dom';
-
 
 export default class ItemList extends Component {
     
@@ -38,6 +38,7 @@ export default class ItemList extends Component {
       <div>
         <Routes>
         <Route path='/' exact Component={NavBar}></Route>
+        <Route path="/orderForm" exact Component={OrderForm}></Route>
         </Routes>
         <br/>
         <div>
@@ -58,7 +59,7 @@ export default class ItemList extends Component {
           </div>
 
           <button type="button" id='addToCart'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>CART</h3></a></button><br/><br/>
-          <button type="button" id='buyBtn'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
+          <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
 
           </div>
        <br/>
