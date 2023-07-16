@@ -17,7 +17,7 @@ const cartSchema = new mongoose.Schema({
         type : Number,
         required : true
     },
-    qtyOnHand : {
+    itemQty : {
         type : Number,
         required : true
     }

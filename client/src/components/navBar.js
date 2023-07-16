@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import './../css/navBar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faTag } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 export default class NavBar extends Component {
   render() {
@@ -20,11 +26,11 @@ export default class NavBar extends Component {
             </div>
 
             <div className='homeBtn'>
-                <button className='navBtn'>Home</button> 
+                <button className='navBtn'><FontAwesomeIcon icon={faHouse} size='2x'/></button>
             </div>
 
             <div className='dashboardBtn'>
-                <button className='navBtn'>DashBoard</button>
+                <button className='navBtn'><FontAwesomeIcon icon={faTag} size='2x'/></button>
             </div>
 
         </div>
