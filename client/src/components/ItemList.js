@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './../css/itemList.css';
+import NavBar from './NavBar';
+import { Route, Routes } from 'react-router-dom';
 
 
 export default class ItemList extends Component {
@@ -32,10 +34,16 @@ export default class ItemList extends Component {
 
     render() {
     return (
-      
+     
+      <div>
+        <Routes>
+        <Route path='/' exact Component={NavBar}></Route>
+        </Routes>
+        <br/>
         <div>
+          
         {this.state.items.map(item => (
-        <div key={item.itemCode}>
+        <div key={item.itemCode} id='mainDiv'>
 
           <div className='itemDiv'>
           <div className='imageDiv'>
@@ -46,11 +54,11 @@ export default class ItemList extends Component {
           <h5>Item-Code : </h5><h6>{item.itemCode}</h6><br/><br/> 
           <h5>Item-Name : </h5><h6>{item.itemName}</h6><br/><br/>  
           <h5>Unit-Price : </h5><h6>{item.price}</h6><br/><br/>
-          <h5>Desctiption : </h5><h6>This Item sample description</h6><br/><br/>  
+          <h5>Desctiption : </h5><h6>Sample description about Item</h6><br/><br/>  
           </div>
 
-          <button type="button" id='addToCart'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>Add To Cart</h3></a></button><br/><br/>
-          <button type="button" id='buyBtn'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>Buy</h3></a></button>
+          <button type="button" id='addToCart'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>CART</h3></a></button><br/><br/>
+          <button type="button" id='buyBtn'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
 
           </div>
        <br/>
@@ -58,6 +66,7 @@ export default class ItemList extends Component {
         </div>
       ))}
 
+      </div>
       </div>
 
     )

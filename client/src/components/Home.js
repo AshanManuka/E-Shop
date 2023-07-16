@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './../css/home.css';
+import { Route, Routes } from 'react-router-dom';
 
 
 export default class Home extends Component {
@@ -7,6 +8,8 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        
+
         <br/>
         <h1 style={{color:"#011740"}}>| Welcome to the CoMaZZ Online Shopping Store</h1>
         <br/><br/>
