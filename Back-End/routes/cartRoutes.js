@@ -1,12 +1,12 @@
 var express = require('express');
-const item = require('../models/cart');
+const cart = require('../models/cart');
 
 const router = express.Router();
 
 //save function
 router.post('/saveCart',async(req,res)=>{
     console.log("Request Cart : ",req.body);
-    const data=await item.create(req.body);
+    const data=await cart.create(req.body);
     res.send("Cart Saved Succesfully!!");   
 })
 
@@ -14,6 +14,7 @@ router.post('/saveCart',async(req,res)=>{
 router.get("/getCart", async (req, res) => {
     try {
         const cartList = await cart.find();
+        console.log(cartList);
         res.send(cartList);
     } catch (error) {
         return error

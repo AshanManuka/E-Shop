@@ -10,9 +10,11 @@ export default class ItemList extends Component {
   constructor(props){
         super(props);
     
+        this.getCartList = this.getCartList.bind(this);
+
         this.state = {
           items : [],
-          cart : []
+          cartList : []
         }
       }
   
@@ -34,12 +36,12 @@ export default class ItemList extends Component {
   }
 
   getCartList(){
-    axios.get("http://localhost:8000/cart/getCart").then(res=>{
-    this.setState({
-      cart:res.data
-    });
-    console.log(this.state.cart);
-    });
+    axios.get("http://localhost:8000/cart/getCart").then(function (res) {
+      this.setState({
+        cartList: res.data
+      });
+      console.log(this.state.cartList);
+    }.bind(this));
   }
 
     render() {
@@ -68,7 +70,7 @@ export default class ItemList extends Component {
           <h5>Desctiption : </h5><h6>Sample description about Item</h6><br/><br/>  
           </div>
 
-          <button type="button" id='addToCart'><a href='/cartForm' style={{textDecoration: 'none', color: 'black'}}><h3>CART</h3></a></button><br/><br/>
+          <button type="button" id='addToCart' onClick={this.getCartList}><h3>CART</h3></button><br/><br/>
           <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
 
           </div>
@@ -83,6 +85,19 @@ export default class ItemList extends Component {
         <h2><b>My CART</b></h2>
           <div className='itemN'>
           <br/><br/>
+          {this.state.cartList.map((cartItem) => (
+          <div key={cartItem.itemCode}>
+            <h5>#|  </h5>
+            <h5>{cartItem.itemName}</h5>
+            <h5> --   Rs:</h5>
+            <h5>{cartItem.price}</h5>
+            <h5> --   Qty:</h5>
+            <h5>{cartItem.itemQty}</h5>
+            <h5> ---- </h5>
+            <button className='delBtn'>Delete</button>
+            <hr />
+          </div>
+        ))}
 
 
 
@@ -95,6 +110,8 @@ export default class ItemList extends Component {
       </div>
 
       </div>
+
+     
 
     )
   }
