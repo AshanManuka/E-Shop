@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './../css/itemList.css';
 import NavBar from './NavBar';
- import OrderForm from './OrderForm';
+import OrderForm from './OrderForm';
 import { Route, Routes } from 'react-router-dom';
 
 export default class ItemList extends Component {
@@ -11,7 +11,8 @@ export default class ItemList extends Component {
         super(props);
     
         this.state = {
-          items : []
+          items : [],
+          cart : []
         }
       }
   
@@ -29,6 +30,15 @@ export default class ItemList extends Component {
       });
       console.log(this.state.items);
 
+    });
+  }
+
+  getCartList(){
+    axios.get("http://localhost:8000/cart/getCart").then(res=>{
+    this.setState({
+      cart:res.data
+    });
+    console.log(this.state.cart);
     });
   }
 
@@ -58,7 +68,7 @@ export default class ItemList extends Component {
           <h5>Desctiption : </h5><h6>Sample description about Item</h6><br/><br/>  
           </div>
 
-          <button type="button" id='addToCart'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>CART</h3></a></button><br/><br/>
+          <button type="button" id='addToCart'><a href='/cartForm' style={{textDecoration: 'none', color: 'black'}}><h3>CART</h3></a></button><br/><br/>
           <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
 
           </div>
@@ -68,6 +78,22 @@ export default class ItemList extends Component {
       ))}
 
       </div>
+
+      <div className='cartList'>
+        <h2><b>My CART</b></h2>
+          <div className='itemN'>
+          <br/><br/>
+
+
+
+          </div>
+          <br/><br/><br/><br/>
+  
+          <button className='makeOrderBtn'><b>Place Order</b></button>
+
+
+      </div>
+
       </div>
 
     )

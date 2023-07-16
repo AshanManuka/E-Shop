@@ -7,6 +7,7 @@ import OrderForm from './components/OrderForm';
 
 
 
+
 export default class App extends Component {
   render() {
     return (
@@ -18,7 +19,8 @@ export default class App extends Component {
             <Route path="/" exact Component={Home}></Route>
             <Route path="/userPage" exact Component={UserDashboard}></Route>
             <Route path="/itemPage" exact Component={ItemList}></Route>
-            <Route path='orderForm' exact Component={OrderForm}></Route>
+            <Route path='/orderForm' exact Component={OrderForm}></Route>
+          
             </Routes>
             
             
