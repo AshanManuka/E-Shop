@@ -4,6 +4,8 @@ import './../css/itemList.css';
 import NavBar from './NavBar';
 import OrderForm from './OrderForm';
 import { Route, Routes } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default class ItemList extends Component {
     
@@ -87,6 +89,7 @@ export default class ItemList extends Component {
           <br/><br/>
           {this.state.cartList.map((cartItem) => (
           <div key={cartItem.itemCode}>
+            <div>
             <h5>#|  </h5>
             <h5>{cartItem.itemName}</h5>
             <h5> --   Rs:</h5>
@@ -94,8 +97,9 @@ export default class ItemList extends Component {
             <h5> --   Qty:</h5>
             <h5>{cartItem.itemQty}</h5>
             <h5> ---- </h5>
-            <button className='delBtn'>Delete</button>
+            <button className='delBtn'><FontAwesomeIcon icon={faDeleteLeft} /></button>
             <hr />
+            </div>
           </div>
         ))}
 
