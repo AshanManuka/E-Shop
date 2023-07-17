@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 
+var itId = "empty";
 export default class ItemList extends Component {
     
   constructor(props){
@@ -38,12 +39,19 @@ export default class ItemList extends Component {
   }
 
   getCartList(){
+    itId = "Coma";
+    console.log(itId);
     axios.get("http://localhost:8000/cart/getCart").then(function (res) {
       this.setState({
         cartList: res.data
       });
       console.log(this.state.cartList);
     }.bind(this));
+  }
+
+
+  setCartList(value){
+    console.log(value);
   }
 
     render() {
@@ -72,7 +80,10 @@ export default class ItemList extends Component {
           <h5>Desctiption : </h5><h6>Sample description about Item</h6><br/><br/>  
           </div>
 
-          <button type="button" id='addToCart' onClick={this.getCartList}><h3>CART</h3></button><br/><br/>
+          <button type="button" id='addToCart' value={item.itemCode} onClick={() => {
+            this.setCartList(this.value);
+            this.getCartList();
+            }}><h3>CART</h3></button><br/><br/>
           <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
 
           </div>
