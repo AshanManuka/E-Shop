@@ -7,7 +7,6 @@ import { Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 
-var itId = "empty";
 export default class ItemList extends Component {
     
   constructor(props){
@@ -39,8 +38,6 @@ export default class ItemList extends Component {
   }
 
   getCartList(){
-    itId = "Coma";
-    console.log(itId);
     axios.get("http://localhost:8000/cart/getCart").then(function (res) {
       this.setState({
         cartList: res.data
@@ -50,8 +47,22 @@ export default class ItemList extends Component {
   }
 
 
-  setCartList(value){
-    console.log(value);
+  setCartList(code, name, price, qty){
+    console.log(code, name, price, qty);
+    const data = {
+      itemCode: code,
+      itemName: name,
+      price: price,
+      itemQty: qty
+    };
+
+    axios.post("http://localhost:8000/cart/saveCart", data)
+    .then(response => {
+      console.log("Save successful:", response.data);
+    })
+    .catch(error => {
+      console.error("Error saving cart data:", error);
+    });
   }
 
     render() {
@@ -81,7 +92,7 @@ export default class ItemList extends Component {
           </div>
 
           <button type="button" id='addToCart' value={item.itemCode} onClick={() => {
-            this.setCartList(this.value);
+            this.setCartList(item.itemCode, item.itemName, item.price, 1);
             this.getCartList();
             }}><h3>CART</h3></button><br/><br/>
           <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
