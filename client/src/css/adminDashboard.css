@@ -1,0 +1,72 @@
+.navDiv{
+    background-color: rgb(101, 194, 161);
+    width: 120%;
+    height: 60px;
+}
+
+.navBtn{
+    margin-top: 5px;
+    position: relative;
+    left: 90%;
+}
+
+.navDiv>img{
+    margin-left: 10px;
+    margin-top: -10px;
+    border: 1px solid rgb(82, 121, 133);
+    border-radius: 5px;
+}
+
+.bodyDiv{
+    position: relative;
+    background-color: rgb(145, 155, 209);
+    top: 50%;
+    left: 10%;
+    margin-top: 50px;
+    height: 550px;
+    border-radius: 5px;
+}
+
+.bodyDiv>button{
+    position: absolute;
+    border: 1px solid rgb(226, 189, 157);
+    width: 320px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.btnOne{
+    background-color: rgb(32, 109, 70);
+    left: 65%;
+    top: 7%;
+}
+
+.btnTwo{
+    background-color: rgb(63, 54, 23);
+    left: 35%;
+    top: 7%
+}
+
+.btnThree{
+    background-color: rgb(38, 106, 110);
+    left: 35%;
+    top: 36%;
+}
+
+.btnFour{
+    background-color: rgb(97, 50, 66);
+    left: 65%;
+    top: 36%;
+}
+
+.btnFive{
+    background-color: rgb(80, 40, 80);
+    left: 35%;
+    top: 65%
+}
+
+.btnSix{
+    background-color: rgb(32, 82, 65);
+    left: 65%;
+    top: 65%;
+}

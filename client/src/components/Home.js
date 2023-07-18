@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './../css/home.css';
-import { Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 
