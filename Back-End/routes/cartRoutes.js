@@ -42,20 +42,33 @@ router.put('putCart/update:id',(req,res)=>{
 });
 
 
-//delete
- router.delete('/delete:id',(req,res)=>{
-  const obId = req.params.id;
-  const newObId = obId.slice(1,obId.length);
-  console.log(newObId);
+// //delete
+//  router.delete('/delete:id',(req,res)=>{
+//   const obId = req.params.id;
+//   const newObId = obId.slice(1,obId.length);
+//   console.log(newObId);
     
-  cart.findByIdAndRemove(newObId) .then(() => {
-    return res.status(200).json({
-        success: "Delete successfully"
-    });
-})
-.catch(err => {
-    return res.status(400).json({ error: err });
-});
- });
+//   cart.findByIdAndRemove(newObId) .then(() => {
+//     return res.status(200).json({
+//         success: "Delete successfully"
+//     });
+// })
+// .catch(err => {
+//     return res.status(400).json({ error: err });
+// });
+//  });
+
+
+
+ // Delete all items in the cart
+ router.delete('/deleteAll', async (req, res) => {
+    console.log("delete all ekta awa");
+    try {
+      await cart.deleteMany({});
+      res.status(200).json({ message: 'All items deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred while deleting items' });
+    }
+  });
 
  module.exports = router;

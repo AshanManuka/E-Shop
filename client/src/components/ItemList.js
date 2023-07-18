@@ -7,9 +7,11 @@ import { Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 
+
 export default class ItemList extends Component {
     
   constructor(props){
+
         super(props);
     
         this.getCartList = this.getCartList.bind(this);
@@ -24,6 +26,7 @@ export default class ItemList extends Component {
       //call lifecycleMethod
   componentDidMount(){
     this.getAllItems();
+    this.getCartList();
   }
 
   getAllItems(){
@@ -63,7 +66,22 @@ export default class ItemList extends Component {
     .catch(error => {
       console.error("Error saving cart data:", error);
     });
+     
   }
+
+
+
+  // deleteCartList(){
+    
+  //   axios.delete("http://localhost:8000/cart/deleteAll")
+  //     .then(response => {
+  //       console.log("Delete successful:", response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error("Error deleting cart items:", error);
+  //     });
+  //     //window.location.reload();
+  // }
 
     render() {
     return (
@@ -130,7 +148,7 @@ export default class ItemList extends Component {
           </div>
           <br/><br/><br/><br/>
   
-          <button className='makeOrderBtn'><b>Place Order</b></button>
+          <button className='makeOrderBtn' onClick={this.deleteCartList}><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><b>Place Order</b></a></button>
 
 
       </div>
