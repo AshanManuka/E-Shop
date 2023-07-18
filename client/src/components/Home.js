@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './../css/home.css';
 import { Route, Routes } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 
 export default class Home extends Component {
   
@@ -9,6 +10,7 @@ export default class Home extends Component {
     return (
       <div>
         
+        <button type="button" id='adminBtn'><a href='/adminDashboard' style={{textDecoration: 'none', color: 'black'}}><h3><FontAwesomeIcon icon={faScrewdriverWrench} /></h3></a></button>
 
         <br/>
         <h1 style={{color:"#011740"}}>| Welcome to the CoMaZZ Online Shopping Store</h1>
