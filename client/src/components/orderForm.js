@@ -13,12 +13,14 @@ export default class OrderForm extends Component {
 
     this.state = {
       cartItemList : []
+      
     }
   }
 
 
   componentDidMount(){
     this.getCartItems();
+    this.countTotal();
   }
 
 
@@ -27,8 +29,29 @@ export default class OrderForm extends Component {
       this.setState({
         cartItemList: res.data
       });
-      console.log(this.state.cartList);
     }.bind(this));
+  }
+
+  countTotal(){
+    let totalPrice = 0;
+    this.state.cartItemList.forEach((cartItem) => {
+      totalPrice += cartItem.price * cartItem.itemQty;
+    });
+    
+    return totalPrice;    
+  }
+
+
+  deleteCartList(){
+    
+    axios.delete("http://localhost:8000/cart/deleteAll")
+      .then(response => {
+        console.log("Delete successful:", response.data);
+      })
+      .catch(error => {
+        console.error("Error deleting cart items:", error);
+      });
+      window.location.reload();
   }
   
   
@@ -48,6 +71,7 @@ export default class OrderForm extends Component {
                   <th>Item Name</th>
                   <th>Unit Price</th>
                   <th>Quantity</th>
+                  <th>Edit List</th>
                   </tr>
                   {this.state.cartItemList.map((cartItem) => (
                   <tbody key={cartItem.itemCode}>
@@ -56,32 +80,22 @@ export default class OrderForm extends Component {
                     <td>{cartItem.itemName}</td>
                     <td>{cartItem.price}</td>
                     <td>{cartItem.itemQty}</td>
+                    <td><button className='delBtn'><FontAwesomeIcon icon={faDeleteLeft} /></button></td>
                   </tr>
                   </tbody>
                   ))}
                 </table>
-                
-          
 
                 </div>
 
-                {/* {this.state.cartItemList.map((cartItem) => (
-          <div key={cartItem.itemCode}>
-            <div>
-            <h5>|  </h5>
-            <h5>{cartItem.itemName}</h5>
-            <h5>  -   Rs:</h5>
-            <h5>{cartItem.price}</h5>
-            <h5>   -   Qty:</h5>
-            <h5>{cartItem.itemQty}</h5>
-            <h5>     - </h5>
-            <button className='delBtn'><FontAwesomeIcon icon={faDeleteLeft} /></button>
-            <hr />
-            </div>
-          </div>
-        ))} */}
+                <div className='descDiv'>
 
+                <h1 className='amountH'>Amount : {this.countTotal()}</h1>
+                <br/><br/>
 
+                <button className='placeOrderBtn' onClick={this.deleteCartList}><h2><b>Order</b></h2></button>
+                
+                </div>
 
             </div>
 

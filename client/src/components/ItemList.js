@@ -70,19 +70,6 @@ export default class ItemList extends Component {
   }
 
 
-
-  // deleteCartList(){
-    
-  //   axios.delete("http://localhost:8000/cart/deleteAll")
-  //     .then(response => {
-  //       console.log("Delete successful:", response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error("Error deleting cart items:", error);
-  //     });
-  //     //window.location.reload();
-  // }
-
     render() {
     return (
      
@@ -130,7 +117,7 @@ export default class ItemList extends Component {
           {this.state.cartList.map((cartItem) => (
           <div key={cartItem.itemCode}>
             <div>
-            <h5>#|  </h5>
+            <h5> |  </h5>
             <h5>{cartItem.itemName}</h5>
             <h5> --   Rs:</h5>
             <h5>{cartItem.price}</h5>
