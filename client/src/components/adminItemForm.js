@@ -68,6 +68,28 @@ export default class adminItemForm extends Component {
 
         </div>
 
+        <div className='editForm'>
+
+        <br/><br/> 
+            <label className='lblOne'><h4><b>Item Code : </b></h4></label><input placeholder='I000' type='text'></input>
+            <br/><br/>
+            <label className='lblTwo'><h4><b>Item Name : </b></h4></label><input placeholder='Sample' type='text'></input>
+            <br/><br/>
+            <label className='lblThree'><h4><b>Unit Price : </b></h4></label><input placeholder='Rs.000' type='text'></input>
+            <br/><br/>
+            <label className='lblFour'><h4><b>Qty On Hand : </b></h4></label><input placeholder='000' type='text'></input>
+            <br/><br/><br/>
+
+            <button className='addBtn'><h6><b>Create New</b></h6></button>
+            <br/><br/>
+            <button className='updateBtn'><h6><b>Update</b></h6></button>
+            <br/><br/>
+            <button className='deleteBtn'><h6><b>Delete</b></h6></button>
+            <br/><br/>
+
+
+        </div>
+
 
 
       </div>
