@@ -8,7 +8,6 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 export default class OrderForm extends Component {
   
   constructor(props){
-
     super(props);
 
     this.state = {

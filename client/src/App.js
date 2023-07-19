@@ -5,6 +5,7 @@ import UserDashboard from './components/UserDashboard';
 import ItemList from './components/ItemList';
 import OrderForm from './components/OrderForm';
 import AdminDashboard from './components/AdminDashboard';
+import adminCustomer from './components/adminCustomer';
 
 
 
@@ -22,6 +23,7 @@ export default class App extends Component {
             <Route path="/itemPage" exact Component={ItemList}></Route>
             <Route path='/orderForm' exact Component={OrderForm}></Route>
             <Route path='/adminDashboard' exact Component={AdminDashboard}></Route>
+            <Route path='/adminUser' exact Component={adminCustomer}></Route>
           
             </Routes>
             
