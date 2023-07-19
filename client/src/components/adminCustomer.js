@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import './../css/adminCustomer.css';
 
 
 export default class adminCustomer extends Component {
@@ -43,6 +44,8 @@ export default class adminCustomer extends Component {
 
         <div className='contentDiv'>
 
+          <div>  
+
         <table className='table table-success table-striped'>
                   <tr>
                   <th>Customer Id</th>
@@ -65,7 +68,7 @@ export default class adminCustomer extends Component {
                 </table>
 
 
-
+                </div>
 
         </div>
 

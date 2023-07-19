@@ -1,0 +1,18 @@
+.contentDiv{
+    position: relative;
+    background-color: rgb(44, 109, 109);
+    width: 110%;
+    left: 5%;
+    top: 100px;
+    border-top: 10px solid rgb(44, 109, 109);
+    border-bottom: 10px solid rgb(44, 109, 109);
+    border-radius: 5px;
+    
+}
+
+.contentDiv>div{
+    position: relative;
+    width: 90%;
+    background-color: rgb(139, 170, 201);
+    left: 5%;
+}
