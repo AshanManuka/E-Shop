@@ -53,6 +53,28 @@ export default class OrderForm extends Component {
       });
       window.location.reload();
   }
+
+  makeOrder(){
+
+    const order = {
+      orderId: "o001", 
+      customerId: "c001", 
+      qty: this.state.cartItemList.length,
+      discount: 10, 
+      amount: this.countTotal()
+    };
+
+    axios
+      .post("http://localhost:8000/order/saveOrder", order)
+      .then((response) => {
+        console.log("Order saved successfully:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error saving order:", error);
+      });
+
+
+  }
   
   
   render() {
@@ -93,7 +115,10 @@ export default class OrderForm extends Component {
                 <h1 className='amountH'>Amount : {this.countTotal()}</h1>
                 <br/><br/>
 
-                <button className='placeOrderBtn' onClick={this.deleteCartList}><h2><b>Order</b></h2></button>
+                <button className='placeOrderBtn' onClick={() => {
+                  this.makeOrder();
+                  this.deleteCartList();
+                }}><h2><b>Order</b></h2></button>
                 
                 </div>
 
