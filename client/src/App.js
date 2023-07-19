@@ -6,6 +6,7 @@ import ItemList from './components/ItemList';
 import OrderForm from './components/OrderForm';
 import AdminDashboard from './components/AdminDashboard';
 import adminCustomer from './components/adminCustomer';
+import adminItemForm from './components/adminItemForm';
 
 
 
@@ -24,6 +25,7 @@ export default class App extends Component {
             <Route path='/orderForm' exact Component={OrderForm}></Route>
             <Route path='/adminDashboard' exact Component={AdminDashboard}></Route>
             <Route path='/adminUser' exact Component={adminCustomer}></Route>
+            <Route path='/adminItem' exact Component={adminItemForm}></Route>
           
             </Routes>
             
