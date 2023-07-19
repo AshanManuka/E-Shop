@@ -18,7 +18,7 @@ export default class NavBar extends Component {
             </div>
 
             <div className='searchBar'>
-                <input className='searchField' placeholder='  Find Items' type='text'></input>
+                <input className='searchField' placeholder='  Find ' type='text'></input>
             </div>
 
             <div className='searchBtn'>
