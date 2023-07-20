@@ -18,9 +18,9 @@
 }
 
 .editForm{
-    position: absolute;
+    position :fixed;
     background-color: rgb(54, 107, 104);
-    top: 10%;
+    top: 120px;
     left: 55%;
     width: 40%;
     border-radius: 6px;

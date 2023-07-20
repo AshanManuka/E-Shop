@@ -19,6 +19,7 @@ export default class adminItemForm extends Component {
           price: "",
           qtyOnHand: ""         
         }
+        this.deleteItem = this.deleteItem.bind(this);
       }
 
       componentDidMount(){
@@ -32,6 +33,18 @@ export default class adminItemForm extends Component {
         itemList: res.data
         });
         }.bind(this));
+      }
+
+      deleteItem(){
+        const itemCodeToDelete = this.state.itemCode;
+        console.log(itemCodeToDelete);
+    axios.delete(`http://localhost:8000/item/deleteItem/${itemCodeToDelete}`)
+      .then((response) => {
+        console.log("Item deleted successfully:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error deleting item:", error);
+      });
       }
 
       handleItemClick(item) {
@@ -88,7 +101,7 @@ export default class adminItemForm extends Component {
         <div className='editForm'>
 
         <br/><br/> 
-            <label className='lblOne'><h4><b>Item Code : </b></h4></label><input placeholder='I000' type='text' value={this.state.itemCode}
+            <label className='lblOne'><h4><b>Item Code : </b></h4></label><input id='itemCodeField' placeholder='I000' type='text' value={this.state.itemCode}
             onChange={(e) => this.setState({ itemCode: e.target.value })} ></input>
             <br/><br/>
             <label className='lblTwo'><h4><b>Item Name : </b></h4></label><input placeholder='Sample' type='text' value={this.state.itemName}
@@ -105,7 +118,7 @@ export default class adminItemForm extends Component {
             <br/><br/>
             <button className='updateBtn'><h6><b>Update</b></h6></button>
             <br/><br/>
-            <button className='deleteBtn'><h6><b>Delete</b></h6></button>
+            <button className='deleteBtn' onClick={this.deleteItem}><h6><b>Delete</b></h6></button>
             <br/><br/>
 
 
