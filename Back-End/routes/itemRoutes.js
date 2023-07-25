@@ -22,40 +22,61 @@ router.get("/getItem", async (req, res) => {
 });
 
  //update
-router.put('putItem/update:id',(req,res)=>{
-    const obId = req.params.id;
-    const newObId = obId.slice(1,obId.length);
+// router.put('putItem/update:id',(req,res)=>{
+//     const obId = req.params.id;
+//     const newObId = obId.slice(1,obId.length);
     
-      item.findByIdAndUpdate(newObId, { 
-        $set: req.body
-      })
-          .then(() => {
-              return res.status(200).json({
-                  success: "updated successfully"
-              });
-          })
-          .catch(err => {
-              return res.status(400).json({ error: err });
-          });
-   
-});
-
-
-// //delete
-//  router.delete('/deleteItem:id',(req,res)=>{
-//    const obId = req.params.id;
-// //   const newObId = obId.slice(1,obId.length);
-// //   console.log(newObId);
-//     console.log("send from :"+id);    
-//   item.findOneAndRemove(obId) .then(() => {
-//     return res.status(200).json({
-//         success: "Delete successfully"
-//     });
-// })
-// .catch(err => {
-//     return res.status(400).json({ error: err });
+//       item.findByIdAndUpdate(newObId, { 
+//         $set: req.body
+//       })
+//           .then(() => {
+//               return res.status(200).json({
+//                   success: "updated successfully"
+//               });
+//           })
+//           .catch(err => {
+//               return res.status(400).json({ error: err });
+//           });
 // });
-//  });
+
+router.put('/updateItem/:itemCode', async (req, res) => {
+    const itemCodeToUpdate = req.params.itemCode;
+  
+    try {
+      // Find the item by itemCode
+      const itemToUpdate = await item.findOne({ itemCode: itemCodeToUpdate });
+  
+      if (!itemToUpdate) {
+        return res.status(404).json({ error: "Item not found" });
+      }
+  
+      // Update the item's fields
+      if (req.body.itemName) {
+        itemToUpdate.itemName = req.body.itemName;
+      }
+  
+      if (req.body.price) {
+        itemToUpdate.price = req.body.price;
+      }
+  
+      if (req.body.qtyOnHand) {
+        itemToUpdate.qtyOnHand = req.body.qtyOnHand;
+      }
+  
+      // Save the updated item
+      const updatedItem = await itemToUpdate.save();
+  
+      return res.status(200).json({
+        success: "Item updated successfully",
+        updatedItem: updatedItem
+      });
+    } catch (error) {
+      console.error("Error updating item:", error);
+      return res.status(500).json({ error: "Error updating item" });
+    }
+  });
+  
+
 
 router.delete('/deleteItem/:id', (req, res) => {
     const obId = req.params.id;

@@ -7,12 +7,13 @@ export default class Home extends Component {
   
   render() {
     return (
-      <div>
+      <div className='mainDivSec'>
         
-        <button type="button" id='adminBtn'><a href='/adminDashboard' style={{textDecoration: 'none', color: 'black'}}><h3><FontAwesomeIcon icon={faScrewdriverWrench} /></h3></a></button>
+        <button type="button" id='adminBtn'><a href='/adminDashboard' ><img src={require('./../assets/storeLogo.png')} alt="Logo Image" /></a></button>
+        <button type="button" id='adminBtnBar'><a href='/adminDashboard' ></a><h4><b>| Welcome to the CoMaZZ Online Shopping Store</b></h4></button>
 
         <br/>
-        <h1 style={{color:"#011740"}}>| Welcome to the CoMaZZ Online Shopping Store</h1>
+
         <br/><br/>
          
 

@@ -2,6 +2,13 @@ body{
     background-color: rgb(206, 231, 248);
 }
 
+body {
+    background-image: url("../assets/bgOne.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 h1{
     font-weight: 1000;
 }
@@ -40,8 +47,9 @@ h2{
 }
 
 .sliderDiv>img{
-    width: 400px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
+    margin-top: 30px;
     border-radius: 10px;
 }
 
@@ -65,5 +73,21 @@ h2{
     border: 1px solid rgb(160, 176, 221);
     border-radius: 6px;
     margin-top: 10px;
-    width: 50px;
+    width: 120px;
+}
+
+#adminBtnBar{
+    background-color: rgb(155, 187, 212);
+    border: 1px solid rgb(160, 176, 221);
+    border-radius: 6px;
+    margin-right: -40%;
+    width: 108%;
+    height: 55px;
+    position: relative;
+    left: 2%;
+    top: -2%;
+}
+
+.sliderDiv>h3>b{
+    margin-top: 150px;
 }

@@ -20,6 +20,7 @@ export default class adminItemForm extends Component {
           qtyOnHand: ""         
         }
         this.deleteItem = this.deleteItem.bind(this);
+        this.updateItem = this.updateItem.bind(this);
       }
 
       componentDidMount(){
@@ -45,6 +46,25 @@ export default class adminItemForm extends Component {
       .catch((error) => {
         console.error("Error deleting item:", error);
       });
+      }
+
+      updateItem() {
+        const updatedItem = {
+          itemCode: this.state.itemCode,
+          itemName: this.state.itemName,
+          price: this.state.price,
+          qtyOnHand: this.state.qtyOnHand
+        };
+    
+        axios.put(`http://localhost:8000/item/updateItem/${this.state.itemCode}`, updatedItem)
+          .then(response => {
+            console.log("Item updated successfully:", response.data);
+            // If needed, you can also reload the items list here
+            this.loadAllItems();
+          })
+          .catch(error => {
+            console.error("Error updating item:", error);
+          });
       }
 
       handleItemClick(item) {
@@ -116,7 +136,7 @@ export default class adminItemForm extends Component {
 
             <button className='addBtn'><h6><b>Create New</b></h6></button>
             <br/><br/>
-            <button className='updateBtn'><h6><b>Update</b></h6></button>
+            <button className='updateBtn' onClick={this.updateItem}><h6><b>Update</b></h6></button>
             <br/><br/>
             <button className='deleteBtn' onClick={this.deleteItem}><h6><b>Delete</b></h6></button>
             <br/><br/>
