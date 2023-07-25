@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './../css/home.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
+
 
 export default class Home extends Component {
   
@@ -18,7 +17,6 @@ export default class Home extends Component {
          
 
         <div className='btnSec'>
-        {/* <h2 style={{color:"black"}}><b>Categories..</b></h2> */}
         <br/>
           <button type="button" class="btn btn-primary"><a href='/itemPage' style={{textDecoration: 'none', color: 'white'}}><h3>| Sport Items</h3><h2><i class="fa-solid fa-volleyball"></i></h2></a></button><br/>
           <button type="button" class="btn btn-dark"><a href='/itemPage' style={{textDecoration: 'none', color: 'white'}}><h3>| Mobile & Accesories</h3></a></button><br/>

@@ -1,3 +1,10 @@
+body {
+    background-image: url("../assets/simpleBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 h1{
     position: relative;
     text-align: center;
@@ -7,7 +14,8 @@ h1{
 .mainList{
     position: relative;
     top: 100px;
-    left: 100px;
+    left: 80px;
+    width: 50%;
 }
 
 .amountH{
