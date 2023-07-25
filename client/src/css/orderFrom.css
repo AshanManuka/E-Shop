@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 600px;
   }
 
 h1{
@@ -19,12 +20,15 @@ h1{
 }
 
 .amountH{
-    margin-top: 100px;
+    position: absolute;
+    left: 810px;
+    top: 200px;
+    background-color: rgb(135, 202, 222);
 }
 
 .placeOrderBtn{
-    position: relative;
-    left: 40%;
+    position: absolute;
+    left: 840px;
     margin-top: 10px;
     margin-bottom: 50px;
     border-radius: 15px;
@@ -32,4 +36,18 @@ h1{
     border: 3px solid plum;
     width: 250px;
     height: 60px;
+    top: 550px;
+}
+
+.selectSec{
+    background-color: rgba(111, 235, 54, 0.5);
+    position: absolute;
+    width: 40%;
+    left: 720px;
+    height: 300px;
+    top: 250px;
+}
+
+.selectSec>div{
+    margin: 50px;
 }

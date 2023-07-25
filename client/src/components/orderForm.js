@@ -3,6 +3,9 @@ import './../css/orderFrom.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class OrderForm extends Component {
@@ -82,7 +85,7 @@ export default class OrderForm extends Component {
 
             <div className='orderDiv'>
 
-                <h1>Place Your Order</h1><br/><br/>
+                <h1><u><b>Place Your Order</b></u></h1><br/><br/>
 
                 <div className='mainList'>
 
@@ -109,6 +112,22 @@ export default class OrderForm extends Component {
 
                 </div>
 
+
+                <div className='selectSec'>
+                  <div>
+                    <h4><b>Select Your Payment Options</b></h4>
+                    <br/><br/>
+                    <h6><b> <FontAwesomeIcon icon={faCreditCard} /> Use Card - <input type='radio'></input></b></h6>
+                    <br/>
+                    <h6><b> <FontAwesomeIcon icon={faBuildingColumns} /> Bank Transaction - <input type='radio'></input></b></h6>
+                    <br/>
+                    <h6><b> <FontAwesomeIcon icon={faMoneyBill} /> Cash On Delivery - <input type='radio'></input></b></h6>
+
+
+
+                  </div>
+                </div>
+
                 <div className='descDiv'>
 
                 <h1 className='amountH'>Amount : {this.countTotal()}</h1>
@@ -126,6 +145,8 @@ export default class OrderForm extends Component {
 
 
       </div>
+    
+
     )
   }
 }
