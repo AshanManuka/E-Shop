@@ -1,9 +1,61 @@
+/* body{
+    background-image: url("../assets/bgTwo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+
+
 .cusLoginMainDiv{
     position: relative;
     width: 100%;
     height: 550px;
     left: 120px;
     top: 90px;
-    background-color: rgb(28, 17, 56,0.5);
+    background-color: rgb(28, 17, 56,0.8);
 
 }
+
+.cusLoginMainDiv>h2{
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.subDivOne>label{
+    color: aliceblue;
+    margin-left: 30px;
+}
+
+.subDivOne>input{
+    margin-left: 50px;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+}
+
+.subDivOne>button{
+    position : absolute;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#logAdmin{
+    background-color: cadetblue;
+    left: 75px;
+    margin-top: 20px;
+}
+
+#logCustomer{
+    background-color: rgb(150, 160, 95);
+    left: 75px;
+    margin-top : 40px
+}
+
+.subDivOne{
+    width: 40%;
+}
+
+
