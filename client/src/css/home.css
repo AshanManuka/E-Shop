@@ -2,12 +2,19 @@ body{
     background-color: rgb(206, 231, 248);
 }
 
-body {
+/* body {
     background-image: url("../assets/bgOne.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
+  } */
+
+.mainDivSec{
+    background-image: url("../assets/bgOne.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 h1{
     font-weight: 1000;

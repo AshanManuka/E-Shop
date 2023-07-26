@@ -1,17 +1,19 @@
 
 
 .mainOrderDiv{
-    background-image: url("../assets/simpleBG.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
+    position: absolute;
+    width: 90%;
+    height: 650px;
+    top: 30px;
+    left: 70px;
+    background-color: rgb(34, 24, 24,0.7);
 }
 
 h1{
     position: relative;
     text-align: center;
     top: 50px;
+    color: aliceblue;
 }
 
 .mainList{
@@ -25,7 +27,7 @@ h1{
     position: absolute;
     left: 810px;
     top: 200px;
-    background-color: rgb(135, 202, 222);
+    background-color: rgb(33, 57, 65);
 }
 
 .placeOrderBtn{

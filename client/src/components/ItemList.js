@@ -6,6 +6,8 @@ import OrderForm from './OrderForm';
 import { Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faShop } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class ItemList extends Component {
@@ -99,8 +101,8 @@ export default class ItemList extends Component {
           <button type="button" id='addToCart' value={item.itemCode} onClick={() => {
             this.setCartList(item.itemCode, item.itemName, item.price, 1);
             this.getCartList();
-            }}><h3>CART</h3></button><br/><br/>
-          <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3>BUY</h3></a></button>
+            }}><h3><FontAwesomeIcon icon={faCartShopping} /></h3></button><br/><br/>
+          <button type="button" id='buyBtn'><a href='/orderForm' style={{textDecoration: 'none', color: 'black'}}><h3><FontAwesomeIcon icon={faShop} /></h3></a></button>
 
           </div>
        <br/>
