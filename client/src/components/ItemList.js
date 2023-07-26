@@ -73,7 +73,7 @@ export default class ItemList extends Component {
     render() {
     return (
      
-      <div>
+      <div className='mainItemListDiv'>
         <Routes>
         <Route path='/' exact Component={NavBar}></Route>
         <Route path="/orderForm" exact Component={OrderForm}></Route>

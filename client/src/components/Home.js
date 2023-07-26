@@ -31,7 +31,7 @@ export default class Home extends Component {
         </div>
 
 
-        <button type="button" id='goBtn'><a href='/itemPage' style={{textDecoration: 'none', color: 'black'}}><h3>Let's Shopping</h3></a></button>
+        <button type="button" id='goBtn'><a href='/loginPage' style={{textDecoration: 'none', color: 'black'}}><h3>Let's Shopping</h3></a></button>
         <br/><br/><br/><br/>
 
         <div className='aboutSec'>

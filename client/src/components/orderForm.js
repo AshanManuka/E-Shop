@@ -81,7 +81,7 @@ export default class OrderForm extends Component {
   
   render() {
     return (
-      <div>
+      <div className='mainOrderDiv'>
 
             <div className='orderDiv'>
 

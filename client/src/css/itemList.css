@@ -2,17 +2,22 @@ body{
     background-color: rgb(189, 236, 236);
 }
 
-body {
-    background-image: url("../assets/5172658.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 
-body>div{
+  /* .mainItemListDiv{
     position: relative;
     margin-left: 0;
-}
+     /* background-image: url("../assets/5172658.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+     
+
+  body>div{
+    position: relative;
+    margin-left: 0;
+  }
+
+
 
 .container{
     margin: 0;
