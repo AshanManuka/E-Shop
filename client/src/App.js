@@ -8,6 +8,7 @@ import AdminDashboard from './components/AdminDashboard';
 import adminCustomer from './components/adminCustomer';
 import adminItemForm from './components/adminItemForm';
 import customerLogin from './components/customerLogin';
+import AdminOrder from './components/AdminOrder';
 
 
 
@@ -29,6 +30,7 @@ export default class App extends Component {
             <Route path="/userPage" exact Component={UserDashboard}></Route>
             <Route path='/adminUser' exact Component={adminCustomer}></Route>
             <Route path='/adminItem' exact Component={adminItemForm}></Route>
+            <Route path='/adminOrder' exact Component={AdminOrder}></Route>
             
           
             </Routes>
