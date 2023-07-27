@@ -1,20 +1,23 @@
 const mongoose = require('mongoose');
 
 const customerSchema = new mongoose.Schema({
-
-    customerId : {
+    cusName : {
         type : String,
         required : true
     },
-    customerName : {
-        type : String,
-        required : true
-    },
-    contactNumber: {
+    cusContact: {
         type : Number,
         required : true
     },
-    address : {
+    cusAddress : {
+        type : String,
+        required : true
+    },
+    cusUserName : {
+        type : String,
+        required : true
+    },
+    cusPassword : {
         type : String,
         required : true
     }

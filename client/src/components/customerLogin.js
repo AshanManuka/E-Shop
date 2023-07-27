@@ -1,7 +1,61 @@
 import React, { Component } from 'react';
 import '../css/customerLogin.css';
+import axios from 'axios';
 
 export default class customerLogin extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+          cusName : "",
+          cusContact : "",
+          cusAddress : "",
+          cusUserName : "",
+          cusPassword : "",
+          confirmPassword : ""
+        }
+
+        this.customerRegister = this.customerRegister.bind(this);
+    }
+
+
+
+  customerRegister(){
+    
+    if(this.state.cusPassword === this.state.confirmPassword){
+      
+      const newCustomer = {
+        cusName : this.state.cusName,
+        cusContact : this.state.cusContact,
+        cusAddress : this.state.cusAddress,
+        cusUserName : this.state.cusUserName,
+        cusPassword : this.state.cusPassword
+      };
+
+      axios
+      .post("http://localhost:8000/customer/savecustomer", newCustomer)
+      .then((response) => {
+        alert("You are saved successfully")
+      })
+      .catch((error) => {
+        alert("not Saved");
+      });
+
+    }else{
+      alert("Passwords are not match!!")
+    }
+
+    
+    
+  console.log(this.state.cusName);
+    
+  }
+
+
+
+
+
+
   render() {
     return (
       <div className='cusLoginMainDiv'>
@@ -29,25 +83,25 @@ export default class customerLogin extends Component {
                 <h2><b>Register Here</b></h2>
                 <br/>
             <label><h4><b>Name : </b></h4></label>
-            <input placeholder='sample name' type='text'></input>
+            <input placeholder='sample name' type='text' value={this.state.cusName} onChange={(e) => this.setState({ cusName: e.target.value })}></input>
             <br/><br/>
             <label><h4><b>Contact Number : </b></h4></label>
-            <input placeholder='070XXXXXXX' type='number'></input>
+            <input placeholder='070XXXXXXX' type='number' value={this.state.cusContact} onChange={(e) => this.setState({ cusContact: e.target.value })}></input>
             <br/><br/>
             <label><h4><b>Address : </b></h4></label>
-            <input placeholder='No 00, city' type='text'></input>
+            <input placeholder='No 00, city' type='text' value={this.state.cusAddress} onChange={(e) => this.setState({ cusAddress: e.target.value })}></input>
             <br/><br/>
             <label><h4><b>UserName : </b></h4></label>
-            <input placeholder='john' type='text'></input>
+            <input placeholder='john' type='text' value={this.state.cusUserName} onChange={(e) => this.setState({ cusUserName: e.target.value })}></input>
             <br/><br/>
             <label><h4><b>Password : </b></h4></label>
-            <input placeholder='Ls@65$Q!2' type='password'></input>
+            <input placeholder='Ls@65$Q!2' type='password' value={this.state.cusPassword} onChange={(e) => this.setState({ cusPassword: e.target.value })}></input>
             <br/><br/>
             <label><h4><b>Confirm Password : </b></h4></label>
-            <input placeholder='Ls@65$Q!2' type='password'></input>
+            <input placeholder='Ls@65$Q!2' type='password' value={this.state.confirmPassword} onChange={(e) => this.setState({ confirmPassword: e.target.value })}></input>
 
             <br/>
-            <button id='regCustomer'><h5><b>Register as Customer</b></h5></button>
+            <button id='regCustomer' onClick={this.customerRegister}><h5><b>Register as Customer</b></h5></button>
             </div>
 
 
