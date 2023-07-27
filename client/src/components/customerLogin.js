@@ -12,10 +12,13 @@ export default class customerLogin extends Component {
           cusAddress : "",
           cusUserName : "",
           cusPassword : "",
-          confirmPassword : ""
+          confirmPassword : "",
+          cusLogName : "",
+          cusLogPassword : ""
         }
 
         this.customerRegister = this.customerRegister.bind(this);
+        this.customerLogin = this.customerLogin.bind(this);
     }
 
 
@@ -32,8 +35,7 @@ export default class customerLogin extends Component {
         cusPassword : this.state.cusPassword
       };
 
-      axios
-      .post("http://localhost:8000/customer/savecustomer", newCustomer)
+      axios.post("http://localhost:8000/customer/savecustomer", newCustomer)
       .then((response) => {
         alert("You are saved successfully")
       })
@@ -44,11 +46,29 @@ export default class customerLogin extends Component {
     }else{
       alert("Passwords are not match!!")
     }
+    
+  }
 
-    
-    
-  console.log(this.state.cusName);
-    
+
+  customerLogin(){
+
+      var uName = this.state.cusLogName;
+      var pWord = this.state.cusLogPassword;
+
+      axios
+      .post('http://localhost:8000/customer/login', {
+        cusUserName: uName,
+        cusPassword: pWord,
+      })
+      .then((response) => {
+        alert("login success");
+        console.log('Login successful:', response.data.customer);
+        // Handle successful login (e.g., store customer data in state or local storage)
+      })
+      .catch((error) => {
+        console.error('Error during login:', error.response.data.message);
+        // Handle login error (e.g., display error message to the user)
+      });
   }
 
 
@@ -65,17 +85,17 @@ export default class customerLogin extends Component {
             <div className='subDivOne'>
             <br/><br/>
             <label><h4><b>Username : </b></h4></label><br/>
-            <input placeholder='sample name' type='text'></input>
+            <input placeholder='sample name' type='text' value={this.state.cusLogName} onChange={(e) => this.setState({ cusLogName: e.target.value })}></input>
             <br/><br/>
             <label><h4><b>Password : </b></h4></label><br/>
-            <input type='password'></input>
+            <input type='password' value={this.state.cusLogPassword} onChange={(e) => this.setState({ cusLogPassword: e.target.value })}></input>
             <br/><br/>
 
             <button id='logAdmin' ><h5><b>Login as Admin</b></h5></button>
             <br/>
 
             <br/>
-            <button id='logCustomer'><h5><b>Login as Customer</b></h5></button>
+            <button id='logCustomer' onClick={this.customerLogin}><h5><b>Login as Customer</b></h5></button>
             </div>
 
             <div className='subDivTwo'>

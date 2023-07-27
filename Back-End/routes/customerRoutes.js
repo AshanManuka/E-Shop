@@ -21,6 +21,26 @@ router.get("/getCustomer", async (req, res) => {
     }
 });
 
+router.post('/login', async (req, res) => {
+    var uName = req.body.cusUserName;
+    var pWord = req.body.cusPassword;
+    
+    const customerOne = await customer.findOne({cusUserName : uName})
+    const customerTwo = await customer.findOne({cusPassword : pWord})
+
+    if(customerOne.equals(customerTwo)){
+        return res.status(200).json({
+            success: "Login successfully",
+          });
+        }else{
+            return res.status(500).json({ error: "Wrong try" });
+        }   
+    }
+
+
+  );
+
+
  //update
 router.put('/updateCus:customerId',(req,res)=>{
 
