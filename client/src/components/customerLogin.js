@@ -3,6 +3,7 @@ import '../css/customerLogin.css';
 import axios from 'axios';
 
 
+
 export default class customerLogin extends Component {
     constructor(props){
         super(props);
@@ -20,9 +21,8 @@ export default class customerLogin extends Component {
 
         this.customerRegister = this.customerRegister.bind(this);
         this.customerLogin = this.customerLogin.bind(this);
+        
     }
-
-
 
   customerRegister(){
     
@@ -68,7 +68,7 @@ export default class customerLogin extends Component {
       })
       .catch((error) => {
         console.error('Error during login:', error.response.data.message);
-        // Handle login error (e.g., display error message to the user)
+        alert("Incorrect Login!!");
       });
   }
 

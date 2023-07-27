@@ -1,0 +1,17 @@
+.mainAdminOrderDiv{
+    background-color: rgb(24, 24, 65,0.5);
+    position: absolute;
+    width: 90%;
+    
+    top : 50px
+
+}
+
+.tableDiv{
+    background-color: rgb(143, 15, 15)(53, 17, 17);
+    position: absolute;
+    width: 85%;
+    margin-left: 8%;
+    border-radius: 5px;
+    
+}

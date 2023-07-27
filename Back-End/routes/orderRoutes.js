@@ -11,7 +11,7 @@ router.post('/saveOrder',async(req,res)=>{
 })
 
 //get 
-router.get("/getOrder", async (req, res) => {
+router.get("/getallOrder", async (req, res) => {
     try {
         const orderList = await order.find();
         res.send(orderList);

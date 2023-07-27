@@ -23,8 +23,6 @@ export default class ItemList extends Component {
         }
       }
   
-
-      //call lifecycleMethod
   componentDidMount(){
     this.getAllItems();
     this.getCartList();

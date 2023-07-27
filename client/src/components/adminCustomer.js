@@ -49,7 +49,7 @@ export default class adminCustomer extends Component {
 
         <table className='table table-success table-striped'>
                   <tr>
-                  <th>Customer Id</th>
+                  <th>Customer</th>
                   <th>Customer Name</th>
                   <th>Contact Number</th>
                   <th>Address</th>
