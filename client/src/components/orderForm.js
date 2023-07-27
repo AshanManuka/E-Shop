@@ -70,6 +70,7 @@ export default class OrderForm extends Component {
       .post("http://localhost:8000/order/saveOrder", order)
       .then((response) => {
         console.log("Order saved successfully:", response.data);
+        window.location.href="/itemPage";
       })
       .catch((error) => {
         console.error("Error saving order:", error);

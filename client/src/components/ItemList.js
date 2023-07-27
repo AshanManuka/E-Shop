@@ -9,7 +9,6 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faShop } from '@fortawesome/free-solid-svg-icons';
 
-
 export default class ItemList extends Component {
     
   constructor(props){

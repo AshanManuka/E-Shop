@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './../css/adminCustomer.css';
 
 
@@ -57,10 +58,10 @@ export default class adminCustomer extends Component {
                   {this.state.customerList.map((cusList) => (
                   <tbody key={cusList.customerId}>
                   <tr>
-                    <td>{cusList.customerId}</td>
-                    <td>{cusList.customerName}</td>
-                    <td>{cusList.contactNumber}</td>
-                    <td>{cusList.address}</td>
+                    <td><FontAwesomeIcon icon={faUser} /></td>
+                    <td>{cusList.cusName}</td>
+                    <td>{cusList.cusContact}</td>
+                    <td>{cusList.cusAddress}</td>
                     <td><button className='delBtn'><FontAwesomeIcon icon={faDeleteLeft} /></button></td>
                   </tr>
                   </tbody>

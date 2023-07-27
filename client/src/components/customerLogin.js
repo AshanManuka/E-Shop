@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/customerLogin.css';
 import axios from 'axios';
 
+
 export default class customerLogin extends Component {
     constructor(props){
         super(props);
@@ -63,7 +64,7 @@ export default class customerLogin extends Component {
       .then((response) => {
         alert("login success");
         console.log('Login successful:', response.data.customer);
-        // Handle successful login (e.g., store customer data in state or local storage)
+        window.location.href="/itemPage";
       })
       .catch((error) => {
         console.error('Error during login:', error.response.data.message);
@@ -128,4 +129,6 @@ export default class customerLogin extends Component {
       </div>
     )
   }
-}
+} 
+
+

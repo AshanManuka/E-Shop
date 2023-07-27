@@ -22,13 +22,14 @@ export default class App extends Component {
 
             <Routes>
             <Route path="/" exact Component={Home}></Route>
-            <Route path="/userPage" exact Component={UserDashboard}></Route>
+            <Route path='/loginPage' exact Component={customerLogin}></Route>
             <Route path="/itemPage" exact Component={ItemList}></Route>
             <Route path='/orderForm' exact Component={OrderForm}></Route>
             <Route path='/adminDashboard' exact Component={AdminDashboard}></Route>
+            <Route path="/userPage" exact Component={UserDashboard}></Route>
             <Route path='/adminUser' exact Component={adminCustomer}></Route>
             <Route path='/adminItem' exact Component={adminItemForm}></Route>
-            <Route path='/loginPage' exact Component={customerLogin}></Route>
+            
           
             </Routes>
             
