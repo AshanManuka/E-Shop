@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
+import AdminNavBar from './AdminNavBar';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -39,7 +39,7 @@ export default class adminCustomer extends Component {
     return (
       <div>
         <Routes>
-        <Route path='/' exact Component={NavBar}></Route>
+        <Route path='/' exact Component={AdminNavBar}></Route>
         </Routes>
 
 

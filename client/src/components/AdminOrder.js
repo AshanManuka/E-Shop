@@ -3,6 +3,8 @@ import './../css/adminOrder.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Route, Routes } from 'react-router-dom';
+import AdminNavBar from './AdminNavBar';
 
 export default class AdminOrder extends Component {
     constructor(props){
@@ -28,8 +30,14 @@ export default class AdminOrder extends Component {
   
   render() {
     return (
-      <div className='mainAdminOrderDiv'>
+      <div id='firstDiv'>
+        <Routes>
+        <Route path='/' exact Component={AdminNavBar}></Route>
+        </Routes>
         
+      <div className='mainAdminOrderDiv'>
+       
+
         <div className='tableDiv'>
           <br/><br/>
           <h2>Orders</h2>
@@ -55,6 +63,7 @@ export default class AdminOrder extends Component {
         </div>
 
 
+      </div>
       </div>
     )
   }

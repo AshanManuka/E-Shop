@@ -1,0 +1,62 @@
+
+#adminNavBarDiv{
+    /* width: 100%; */
+    margin-left: -2px;
+}
+
+
+.leftDiv{
+    background-color: rgb(87, 87, 117);
+    width: 100%;
+    height: 60px;
+    display: inline-block;
+    position: relative;
+}
+
+.leftDiv>div{
+    position: relative;
+    display: inline;
+    top: 5px;
+}
+
+
+.userImage{
+    position: absolute;
+    margin-right: 20%;
+    margin-left: 15px;
+}
+
+.homeBtn{
+    position: relative;
+    left: 60%;
+}
+
+.homeBtn>.navBtn{
+    height: 41px;
+    background-color: rgb(126, 109, 131);
+}
+
+a{
+    text-decoration : none;
+    color: black;
+}
+
+.homeBtn>.navBtn>a>h3{
+    font-size: small;
+    margin-top: 5px;
+}
+
+.dashboardBtn{
+    position: relative;
+    left: 63%;
+}
+
+.navBtn{
+    border-radius: 10px;
+    border: 2px solid rgb(192, 192, 219);
+    background-color: rgb(126, 109, 131);
+    height: 50px;
+    width: 60px;
+}
+
+

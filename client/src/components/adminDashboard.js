@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './../css/adminDashboard.css';
-import NavBar from './NavBar';
+import AdminNavBar from './AdminNavBar';
 import { Route, Routes } from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ export default class AdminDashboard extends Component {
       <div className='mainDiv'>
           
          <Routes>
-        <Route path='/' exact Component={NavBar}></Route>
+        <Route path='/' exact Component={AdminNavBar}></Route>
         </Routes>
 
 

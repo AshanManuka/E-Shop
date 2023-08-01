@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Route, Routes } from 'react-router-dom';
-import NavBar from './NavBar';
+import AdminNavBar from './AdminNavBar';
 
 
 export default class adminItemForm extends Component {
@@ -82,7 +82,7 @@ export default class adminItemForm extends Component {
       <div>
         
         <Routes>
-        <Route path='/' exact Component={NavBar}></Route>
+        <Route path='/' exact Component={AdminNavBar}></Route>
         </Routes>
 
         <br/>
