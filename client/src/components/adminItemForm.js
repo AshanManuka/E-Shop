@@ -86,7 +86,7 @@ export default class adminItemForm extends Component {
         </Routes>
 
         <br/>
-        <h2><b><u>Manage ITEMS</u></b></h2>
+        <h2 id='head2'><b><u>Manage ITEMS</u></b></h2>
 
         <div className='itemConDiv'>
 

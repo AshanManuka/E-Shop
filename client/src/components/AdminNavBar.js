@@ -12,17 +12,17 @@ export default class NavBar extends Component {
     return (
       <div id='adminNavBarDiv'>
         
-        <div className='leftDiv'>
-            <div className='userImage'>
+        <div className='leftDiv2'>
+            <div className='userImage2'>
             <img src={require('./../assets/storeLogo.png')} alt="profile picture"/>
             </div>
 
-            <div className='homeBtn'>
-                <button className='navBtn'><a href='/'><h3><FontAwesomeIcon icon={faHouse} size='2x'/></h3></a></button>
+            <div className='homeBtn2'>
+                <button className='navBtn2'><a href='/'><h3><FontAwesomeIcon icon={faHouse} size='2x'/></h3></a></button>
             </div>
 
-            <div className='dashboardBtn'>
-                <button className='navBtn'><FontAwesomeIcon icon={faTag} size='2x'/></button>
+            <div className='dashboardBtn2'>
+                <button className='navBtn2'><FontAwesomeIcon icon={faTag} size='2x'/></button>
             </div>
 
         </div>
