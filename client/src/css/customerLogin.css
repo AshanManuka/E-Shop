@@ -5,14 +5,23 @@
     background-repeat: no-repeat;
 } */
 
-
+#loginMainDiv{
+    margin-left: -10px;
+    width: 122%;
+    height: 689px;
+    /* background-color: rgb(110, 117, 115); */
+    background-image: url("../assets/bgTwo.jpg");
+    background-size: cover;
+    
+}
 
 .cusLoginMainDiv{
-    position: relative;
-    width: 100%;
+    position: absolute;
+    width: 90%;
     height: 550px;
-    left: 120px;
+    left: 60px;
     top: 90px;
+    margin: 0;
     background-color: rgb(28, 17, 56,0.8);
 
 }

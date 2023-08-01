@@ -26,7 +26,7 @@ export default class NavBar extends Component {
             </div>
 
             <div className='homeBtn'>
-                <button className='navBtn'><FontAwesomeIcon icon={faHouse} size='2x'/></button>
+                <button className='navBtn'><a href='/'><h3><FontAwesomeIcon icon={faHouse} size='2x'/></h3></a></button>
             </div>
 
             <div className='dashboardBtn'>

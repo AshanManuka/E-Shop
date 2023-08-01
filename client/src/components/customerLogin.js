@@ -79,6 +79,7 @@ export default class customerLogin extends Component {
 
   render() {
     return (
+      <div id='loginMainDiv'>
       <div className='cusLoginMainDiv'>
         <br/>
         <h2><b>Login Here</b></h2>
@@ -126,6 +127,7 @@ export default class customerLogin extends Component {
             </div>
 
 
+      </div>
       </div>
     )
   }

@@ -1,19 +1,13 @@
 body{
-    background-color: rgb(206, 231, 248);
+    background-color: rgb(9, 16, 20);
 }
 
-/* body {
-    background-image: url("../assets/bgOne.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  } */
-
 .mainDivSec{
+    margin-left: -8px;
     background-image: url("../assets/bgOne.jpg");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 120.5%;
+    height: 700px;
 }
 
 h1{
@@ -26,8 +20,6 @@ h2{
 
 .btnSec{
     width: 60%;
-    /* border-radius: 10px; */
-    /* background-color: rgb(153, 211, 192); */
 }
 
 .btnSec>button{
@@ -49,8 +41,9 @@ h2{
     position: absolute;
     width: 450px;
     height: 300px;
-    top: 10%;
-    left: 60%;
+    margin: 0;
+    top: 15%;
+    left: 50%;
 }
 
 .sliderDiv>img{
@@ -62,17 +55,20 @@ h2{
 
 #goBtn{
     position: absolute;
-    background-color: #ecf018;
-    left: 60%;
-    top: 41%;
-    width: 400px;
-    height: 100px;
-    border-radius: 5px;
-    border: rgb(240, 198, 84) 2px solid;
+    background-color: #221d01;
+    left: 50%;
+    top: 70%;
+    width: 360px;
+    height: 80px;
+    margin: 0;
+    border-radius: 8px;
+    border: rgb(134, 145, 17) 2px solid;
 }
 
-#goBtn>h3{
-    color: black;
+#goBtn>a>h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(250, 244, 244);
+    font-weight: 800;
 }
 
 #adminBtn{
@@ -87,12 +83,11 @@ h2{
     background-color: rgb(155, 187, 212);
     border: 1px solid rgb(160, 176, 221);
     border-radius: 6px;
-    margin-right: -40%;
-    width: 105%;
+    width: 88%;
     height: 55px;
     position: relative;
     left: 2%;
-    top: -2%;
+    
 }
 
 .sliderDiv>h3>b{
@@ -105,6 +100,8 @@ h2{
     border-left: 10px solid rgb(153, 122, 141,0.5);
     border-right: 10px solid rgb(153, 122, 141,0.5);
     margin-bottom: 50px;
-    position: relative;
+    position: absolute;
     left: 10%;
+    right: 10%;
+    width: auto;
 }
