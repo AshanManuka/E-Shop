@@ -79,14 +79,14 @@ export default class adminItemForm extends Component {
  
     render() {
     return (
-      <div>
+      <div id='itemMainDiv'>
         
         <Routes>
         <Route path='/' exact Component={AdminNavBar}></Route>
         </Routes>
 
         <br/>
-        <h2><b>Manage ITEMS</b></h2>
+        <h2><b><u>Manage ITEMS</u></b></h2>
 
         <div className='itemConDiv'>
 

@@ -1,9 +1,22 @@
+
+#itemMainDiv{
+    margin-left: -9px;
+    width: 120.5%;
+}
+
+h2{
+    color: aliceblue;
+    margin-left: 50px;
+    background-color: rgb(51, 50, 3);
+    display: inline;
+}
+
 .itemConDiv{
     position: relative;
     background-color: rgb(44, 109, 109);
-    width: 60%;
+    width: 50%;
     left: 1%;
-    top: 100px;
+    top: 10px;
     border-top: 10px solid rgb(44, 109, 109);
     border-bottom: 10px solid rgb(44, 109, 109);
     border-radius: 5px;
@@ -56,5 +69,5 @@
 }
 
 .updateBtn{
-    background-color: rgb(164, 167, 45);
+    background-color: rgb(49, 167, 45);
 }
