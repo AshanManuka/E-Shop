@@ -1,7 +1,17 @@
+
+#firstMainDiv{
+    /* background-color: aqua; */
+    background-image: url("../assets/bgImageOne.jpg");
+    background-size: cover;
+    margin-left : -9px; 
+    width: 122%;
+    height: 686px;
+}
+
 .contentDiv{
     position: relative;
     background-color: rgb(44, 109, 109,0.5);
-    width: 110%;
+    width: 90%;
     left: 5%;
     top: 100px;
     border-top: 10px solid rgb(44, 109, 109);
@@ -13,6 +23,7 @@
 .contentDiv>div{
     position: relative;
     width: 90%;
+    margin-top: 15px;
     background-color: rgb(139, 170, 201);
     left: 5%;
 }

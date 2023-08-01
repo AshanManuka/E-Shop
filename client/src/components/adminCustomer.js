@@ -37,7 +37,7 @@ export default class adminCustomer extends Component {
   
     render() {
     return (
-      <div>
+      <div id='firstMainDiv'>
         <Routes>
         <Route path='/' exact Component={AdminNavBar}></Route>
         </Routes>
