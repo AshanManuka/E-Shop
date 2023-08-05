@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 export default class customerLogin extends Component {
+
     constructor(props){
         super(props);
 
@@ -62,7 +63,8 @@ export default class customerLogin extends Component {
         cusPassword: pWord,
       })
       .then((response) => {
-        alert("login success");
+        localStorage.setItem('customerId', uName);
+        alert("login success"+ uName);
         console.log('Login successful:', response.data.customer);
         window.location.href="/itemPage";
       })
@@ -71,6 +73,8 @@ export default class customerLogin extends Component {
         alert("Incorrect Login!!");
       });
   }
+
+
 
 
 

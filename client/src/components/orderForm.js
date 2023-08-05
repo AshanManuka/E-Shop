@@ -6,6 +6,7 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import customerLogin from './customerLogin';
 
 
 export default class OrderForm extends Component {
@@ -57,10 +58,10 @@ export default class OrderForm extends Component {
   }
 
   makeOrder(){
-
+    const cusId = localStorage.getItem('customerId');
     const order = {
       orderId: "o001", 
-      customerId: "c001", 
+      customerId: cusId, 
       qty: this.state.cartItemList.length,
       discount: 10, 
       amount: this.countTotal()
