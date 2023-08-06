@@ -85,7 +85,7 @@ export default class ItemList extends Component {
 
           <div className='itemDiv'>
           <div className='imageDiv'>
-          <img src={require("./../assets/wapeTwo.jpg")} alt="itemImage" className='itemImage'/>
+           <img src={require(`./../assets/${item.imageUrl}.jpg`)} alt="itemImage" className='itemImage'/>
           </div> 
           
           <div className='desDiv'>

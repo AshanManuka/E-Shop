@@ -21,6 +21,8 @@ export default class adminItemForm extends Component {
         }
         this.deleteItem = this.deleteItem.bind(this);
         this.updateItem = this.updateItem.bind(this);
+        this.addItem = this.addItem.bind(this);
+        
       }
 
       componentDidMount(){
@@ -66,6 +68,28 @@ export default class adminItemForm extends Component {
             console.error("Error updating item:", error);
           });
       }
+
+      addItem() {
+        const newItem = {
+          itemCode: this.state.itemCode,
+          itemName: this.state.itemName,
+          imageUrl : this.state.itemName,
+          price: this.state.price,
+          qtyOnHand: this.state.qtyOnHand
+        };
+    
+        axios.post(`http://localhost:8000/item/saveItem/`, newItem)
+          .then(response => {
+            console.log("Item Added successfully:", response.data);
+            alert("Item Added Successfully");
+            // If needed, you can also reload the items list here
+            this.loadAllItems();
+          })
+          .catch(error => {
+            console.error("Error updating item:", error);
+          });
+      }
+
 
       handleItemClick(item) {
         this.setState({
@@ -132,9 +156,11 @@ export default class adminItemForm extends Component {
             <br/><br/>
             <label className='lblFour'><h4><b>Qty On Hand : </b></h4></label><input placeholder='000' type='text' value={this.state.qtyOnHand}
             onChange={(e) => this.setState({ qtyOnHand: e.target.value })} ></input>
-            <br/><br/><br/>
+            <br/><br/>
+            <label className='lblFour'><h4><b>Item Image : </b></h4></label><input type='file'></input>
+            <br/><br/>
 
-            <button className='addBtn'><h6><b>Create New</b></h6></button>
+            <button className='addBtn' onClick={this.addItem}><h6><b>Create New</b></h6></button>
             <br/><br/>
             <button className='updateBtn' onClick={this.updateItem}><h6><b>Update</b></h6></button>
             <br/><br/>
