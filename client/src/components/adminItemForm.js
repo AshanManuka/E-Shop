@@ -161,9 +161,9 @@ export default class adminItemForm extends Component {
             <br/><br/>
 
             <button className='addBtn' onClick={this.addItem}><h6><b>Create New</b></h6></button>
-            <br/><br/>
+            {/* <br/><br/> */}
             <button className='updateBtn' onClick={this.updateItem}><h6><b>Update</b></h6></button>
-            <br/><br/>
+            {/* <br/><br/> */}
             <button className='deleteBtn' onClick={this.deleteItem}><h6><b>Delete</b></h6></button>
             <br/><br/>
 

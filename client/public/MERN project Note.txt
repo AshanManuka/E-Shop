@@ -1,0 +1,9 @@
+MongoDB
+
+
+project name == togakadeProject
+
+database/cluster name == togakadeApp
+
+username == manuka
+password == manuka123
