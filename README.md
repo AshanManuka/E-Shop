@@ -1,5 +1,7 @@
 # E-Marketplace
 
+<br>
+
 About
 ----------------
 Embark on a seamless online shopping experience with our state-of-the-art e-commerce platform developed using the MERN (MongoDB, Express.js, React, Node.js) stack. Tailored for both administrators and clients, this platform redefines the digital shopping landscape.
